@@ -1,0 +1,85 @@
+/* Styles for Play on TV buttons */
+.play-on-tv-btn {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  z-index: 9999;
+}
+
+/* Thumbnail button style */
+.play-on-tv-thumbnail {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 6px;
+  border-radius: 50%;
+  font-size: 14px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+.play-on-tv-thumbnail:hover {
+  background: rgba(56, 173, 150, 0.9);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Notification styles */
+.playytapi-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  z-index: 999999;
+  max-width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.playytapi-success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.playytapi-error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.playytapi-info {
+  background: #cce7ff;
+  color: #004085;
+  border: 1px solid #99d6ff;
+}
+
+/* Hide buttons on very small thumbnails */
+@media (max-width: 768px) {
+  .play-on-tv-thumbnail {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+}

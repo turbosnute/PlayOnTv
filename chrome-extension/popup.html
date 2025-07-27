@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .tv-icon {
+      width: 24px;
+      height: 24px;
+      background: #38ad96;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+    }
+    
+    h1 {
+      margin: 0;
+      font-size: 16px;
+      color: #333;
+    }
+    
+    .status {
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+    
+    .status-connected {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .status-disconnected {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    
+    .current-video {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .current-video h3 {
+      margin: 0 0 8px 0;
+      font-size: 14px;
+      color: #495057;
+    }
+    
+    .video-info {
+      font-size: 12px;
+      color: #6c757d;
+      margin-bottom: 8px;
+    }
+    
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    
+    .btn-primary {
+      background: #38ad96;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: #2d8b75;
+    }
+    
+    .btn-secondary {
+      background: #f8f9fa;
+      color: #495057;
+      border: 1px solid #dee2e6;
+    }
+    
+    .btn-secondary:hover {
+      background: #e9ecef;
+    }
+    
+    .btn-disabled {
+      background: #e9ecef;
+      color: #6c757d;
+      cursor: not-allowed;
+    }
+    
+    .quick-actions {
+      border-top: 1px solid #dee2e6;
+      padding-top: 16px;
+      margin-top: 16px;
+    }
+    
+    .quick-actions h3 {
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      color: #495057;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="tv-icon">📺</div>
+    <h1>PlayYtApi TV Remote</h1>
+  </div>
+  
+  <div id="connectionStatus" class="status status-disconnected">
+    Checking connection...
+  </div>
+  
+  <div id="currentVideo" class="current-video" style="display: none;">
+    <h3>Current Video:</h3>
+    <div id="videoInfo" class="video-info"></div>
+    <button id="playCurrentBtn" class="btn-primary">▶️ Play on TV</button>
+  </div>
+  
+  <div class="quick-actions">
+    <h3>Quick Actions:</h3>
+    <button id="openSettingsBtn" class="btn-secondary">⚙️ Settings</button>
+    <button id="testConnectionBtn" class="btn-secondary">🔍 Test Connection</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
