@@ -39,49 +39,8 @@ function addPlayOnTvButtons() {
   // Remove existing buttons to avoid duplicates
   document.querySelectorAll('.play-on-tv-btn').forEach(btn => btn.remove());
   
-  // Add buttons to video thumbnails (search results, recommendations, etc.)
-  addThumbnailButtons();
-  
   // Watch for new content (YouTube is a SPA)
   observePageChanges();
-}
-
-function addThumbnailButtons() {
-  // Add buttons to video thumbnails
-  const thumbnails = document.querySelectorAll('ytd-video-renderer, ytd-compact-video-renderer, ytd-grid-video-renderer');
-  
-  thumbnails.forEach(thumbnail => {
-    if (thumbnail.querySelector('.play-on-tv-btn')) return; // Already has button
-    
-    const linkElement = thumbnail.querySelector('a#thumbnail, a.ytd-thumbnail');
-    if (!linkElement) return;
-    
-    const videoId = getVideoIdFromUrl(linkElement.href);
-    if (!videoId) return;
-    
-    const button = createPlayButton('thumbnail');
-    button.onclick = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      playOnTv(videoId);
-    };
-    
-    // Position the button over the thumbnail
-    const thumbnailContainer = thumbnail.querySelector('ytd-thumbnail, .ytd-thumbnail');
-    if (thumbnailContainer) {
-      thumbnailContainer.style.position = 'relative';
-      thumbnailContainer.appendChild(button);
-    }
-  });
-}
-
-function createPlayButton(type) {
-  const button = document.createElement('div');
-  button.className = `play-on-tv-btn play-on-tv-${type}`;
-  button.innerHTML = '📺';
-  button.title = 'Play on Android TV';
-  
-  return button;
 }
 
 function getVideoIdFromUrl(url) {
@@ -157,10 +116,8 @@ function observePageChanges() {
       setTimeout(() => {
         addPlayOnTvButtons();
       }, 1000);
-    } else {
-      // Content might have changed, check for new thumbnails
-      addThumbnailButtons();
     }
+    // Removed thumbnail button checking since we no longer use thumbnail buttons
   });
   
   observer.observe(document.body, {

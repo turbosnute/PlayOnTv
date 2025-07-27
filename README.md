@@ -43,67 +43,9 @@ cd PlayOnTv
 
 ## 🎯 How to Use
 
-### On YouTube Video Pages
-- Look for the 📺 button in the video player controls
-- Click it to send the current video to your TV
-
-### On YouTube Browse/Search Pages
-- Hover over any video thumbnail
-- Click the 📺 button that appears to send that video to your TV
-
 ### Via Extension Popup
 - Click the extension icon in Chrome toolbar
 - If you're on a YouTube video page, click "▶️ Play on TV"
 - Access settings and connection testing from the popup
 
-## 🔧 Troubleshooting
-
-### Common Issues
-
-**Play on TV button covers other YouTube controls**
-- The button is now positioned before the settings gear icon to avoid overlapping
-- If you still experience issues, try refreshing the YouTube page
-- The button should appear with proper spacing between other controls
-
-**"Connection refused" or "Connection timeout"**
-- Verify your Android TV IP address is correct
-- Ensure PlayYtApi app is running on your TV
-- Check that both devices are on the same WiFi network
-- Confirm the port number (default: 8383)
-
-**"No TV configured"**
-- Go to extension settings (⚙️) and configure your TV IP and port
-- Use the "Test Connection" feature to verify setup
-
-**Buttons not appearing on YouTube**
-- Refresh the YouTube page
-- Make sure the extension is enabled in `chrome://extensions/`
-- Verify your TV settings are configured
-
-**CORS Errors during connection testing**
-- This is normal behavior for the test button
-- The extension will still work properly on YouTube pages
-- CORS doesn't affect the main functionality
-
-## 🛠️ Development
-
-### Making Changes
-
-1. Edit files in the `chrome-extension` folder
-2. Go to `chrome://extensions/`
-3. Click the reload button (🔄) on the PlayYtApi TV Remote extension
-4. Test your changes on YouTube
-
 **No data is sent to external servers** - all communication happens directly between your browser and your local Android TV.
-
-## 📝 License
-
-This project is open source. Feel free to modify and distribute according to your needs.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit issues and pull requests.
-
-## 🎉 Enjoy Your Big Screen Experience!
-
-Now you can effortlessly send any YouTube video to your Android TV with just one click! 📺✨
